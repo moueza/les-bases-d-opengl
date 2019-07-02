@@ -74,3 +74,78 @@ void stop_opengl()
 {
 SDL_Quit();
 }
+
+
+void tourne_cube()
+{
+int i = 1000;
+
+while (--i)
+{
+SDL_Delay(30);
+
+glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
+
+glBegin(GL_QUADS);
+/*face du dessous*/
+glColor3f(1.0,0.0,0.0);
+glVertex3d(-.3,-.3,-.3);
+glVertex3d(-.3,-.3,.3);
+
+glVertex3d(.3,-.3,.3);
+glVertex3d(.3,-.3,-.3);
+
+
+/*face de devant*/
+glColor3f(0.0,1.0,0.0);
+glVertex3d(-.3,-.3,-.3);
+glVertex3d(-.3,.3,-.3);
+
+glVertex3d(.3,.3,-.3);
+glVertex3d(.3,-.3,-.3);
+
+/*face du dessus*/
+glColor3f(1.0,0.0,0.0);
+glVertex3d(-.3,.3,-.3);
+glVertex3d(-.3,.3,.3);
+
+glVertex3d(.3,.3,.3);
+glVertex3d(.3,.3,-.3);
+
+
+/*face de derriere*/
+glColor3f(0.0,1.0,0.0);
+glVertex3d(-.3,-.3,.3);
+glVertex3d(-.3,.3,.3);
+
+glVertex3d(.3,.3,.3);
+glVertex3d(.3,-.3,.3);
+
+
+
+
+/*face de droite*/
+glColor3f(0.0,0.0,1.0);
+glVertex3d(.3,-.3,-.3);
+glVertex3d(.3,.3,-.3);
+
+glVertex3d(.3,.3,.3);
+glVertex3d(.3,-.3,.3);
+
+
+
+/*face de gauche*/
+glColor3f(0.0,0.0,1.0);
+glVertex3d(-.3,-.3,-.3);
+glVertex3d(-.3,.3,-.3);
+
+glVertex3d(-.3,.3,.3);
+glVertex3d(-.3,-.3,.3);
+
+glEnd();
+
+glRotated(5, 1.0,1.0,1.0);
+
+SDL_GL_SwapBuffers();
+}
+}
