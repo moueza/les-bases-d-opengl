@@ -54,6 +54,7 @@ glClearDepth(1.0);
 
 
 
+
 /*comment choisir si un point est DV 1 autr ou pas Occlusion*/
 glDepthFun(GL_LEQUAL);
 /*n affiche pas les points caches*/
